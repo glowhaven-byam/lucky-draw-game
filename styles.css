@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('images/background.jpeg'); /* Updated to .jpeg */
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.title, .instruction {
+    color: #CC0241; /* Title and instruction color */
+    font-size: 2em; /* Adjust the size as needed */
+    margin: 0.5em 0;
+}
+
+.title {
+    margin-top: 20px; /* Adjust to move title higher */
+}
+
+.instruction {
+    margin-bottom: 20px; /* Adjust to move instruction higher */
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Increased gap for more space between cards */
+    width: 480px; /* 3 cards width + 2 gaps */
+    perspective: 1000px;
+    margin: 20px auto;
+}
+
+.card {
+    width: 140px; /* Increased card size */
+    height: 200px; /* Increased card size */
+    background-image: url('images/card-back.jpeg'); /* Updated to .jpeg */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.6s, opacity 0.3s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em; /* Adjust font size inside cards */
+    color: #FFBABB;
+}
+
+.card-front {
+    background-color: #CC0241;
+    transform: rotateY(180deg);
+}
+
+.card.faded {
+    opacity: 0.3;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: green;
+}
+
+#retry {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #CC0241;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .cards {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .card {
+        width: calc(33.33% - 20px);
+        height: 180px;
+    }
+
+    .title, .instruction {
+        font-size: 1.5em;
+    }
+
+    .card-content {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .card {
+        width: calc(33.33% - 15px);
+        height: 160px;
+    }
+
+    .title, .instruction {
+        font-size: 1.2em;
+    }
+
+    .card-content {
+        font-size: 0.9em;
+    }
+}

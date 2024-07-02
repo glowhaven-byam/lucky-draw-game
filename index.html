@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Draw</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Lucky Draw</h1>
+        <p class="instruction">Click on a card to reveal your reward!</p>
+        <div class="cards">
+            <div class="card" onclick="drawCard(0)"></div>
+            <div class="card" onclick="drawCard(1)"></div>
+            <div class="card" onclick="drawCard(2)"></div>
+            <div class="card" onclick="drawCard(3)"></div>
+            <div class="card" onclick="drawCard(4)"></div>
+            <div class="card" onclick="drawCard(5)"></div>
+            <div class="card" onclick="drawCard(6)"></div>
+            <div class="card" onclick="drawCard(7)"></div>
+            <div class="card" onclick="drawCard(8)"></div>
+        </div>
+        <div id="result"></div>
+        <button id="retry" onclick="retry()" style="display: none;">Retry</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
